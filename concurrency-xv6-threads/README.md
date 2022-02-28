@@ -40,7 +40,7 @@ Your thread library will be built on top of this, and just have a simple `int
 thread_create(void (*start_routine)(void *, void *), void *arg1, void *arg2)`
 routine. This routine should call `malloc()` to create a new user stack, use
 `clone()` to create the child thread and get it running. It returns the newly
-created PID to the parent and 0 to the child (if successful), -1 otherwise.
+created PID to the parent (if successful), -1 otherwise.
 An `int thread_join()` call should also be created, which calls the underlying
 `join()` system call, frees the user stack, and then returns. It returns the
 waited-for PID (when successful), -1 otherwise.
